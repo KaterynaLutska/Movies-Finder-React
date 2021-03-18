@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.56f0a7f1.chunk.css",
-    "main.js": "/static/js/main.fa1794ce.chunk.js",
-    "main.js.map": "/static/js/main.fa1794ce.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.276a198b.js",
-    "runtime-main.js.map": "/static/js/runtime-main.276a198b.js.map",
-    "static/css/2.de71bbd8.chunk.css": "/static/css/2.de71bbd8.chunk.css",
-    "static/js/2.a85df3c2.chunk.js": "/static/js/2.a85df3c2.chunk.js",
-    "static/js/2.a85df3c2.chunk.js.map": "/static/js/2.a85df3c2.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.de71bbd8.chunk.css.map": "/static/css/2.de71bbd8.chunk.css.map",
-    "static/css/main.56f0a7f1.chunk.css.map": "/static/css/main.56f0a7f1.chunk.css.map",
-    "static/js/2.a85df3c2.chunk.js.LICENSE.txt": "/static/js/2.a85df3c2.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/static/media/bg-pattern.c18d167e.png"
+    "main.css": "/goit-react-hw-04-movies/static/css/main.4f3bf1be.chunk.css",
+    "main.js": "/goit-react-hw-04-movies/static/js/main.fa1794ce.chunk.js",
+    "main.js.map": "/goit-react-hw-04-movies/static/js/main.fa1794ce.chunk.js.map",
+    "runtime-main.js": "/goit-react-hw-04-movies/static/js/runtime-main.5e541399.js",
+    "runtime-main.js.map": "/goit-react-hw-04-movies/static/js/runtime-main.5e541399.js.map",
+    "static/css/2.de71bbd8.chunk.css": "/goit-react-hw-04-movies/static/css/2.de71bbd8.chunk.css",
+    "static/js/2.a85df3c2.chunk.js": "/goit-react-hw-04-movies/static/js/2.a85df3c2.chunk.js",
+    "static/js/2.a85df3c2.chunk.js.map": "/goit-react-hw-04-movies/static/js/2.a85df3c2.chunk.js.map",
+    "index.html": "/goit-react-hw-04-movies/index.html",
+    "static/css/2.de71bbd8.chunk.css.map": "/goit-react-hw-04-movies/static/css/2.de71bbd8.chunk.css.map",
+    "static/css/main.4f3bf1be.chunk.css.map": "/goit-react-hw-04-movies/static/css/main.4f3bf1be.chunk.css.map",
+    "static/js/2.a85df3c2.chunk.js.LICENSE.txt": "/goit-react-hw-04-movies/static/js/2.a85df3c2.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/goit-react-hw-04-movies/static/media/bg-pattern.c18d167e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.276a198b.js",
+    "static/js/runtime-main.5e541399.js",
     "static/css/2.de71bbd8.chunk.css",
     "static/js/2.a85df3c2.chunk.js",
-    "static/css/main.56f0a7f1.chunk.css",
+    "static/css/main.4f3bf1be.chunk.css",
     "static/js/main.fa1794ce.chunk.js"
   ]
 }
