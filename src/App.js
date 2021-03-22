@@ -1,14 +1,18 @@
 import s from './App.css';
 
-import { Component } from 'react';
+import { Component, Suspense, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import routes from './routes';
 
 import Container from './components/Container';
 import AppBar from './components/AppBar';
-import HomePage from './components/HomePage';
-import MoviesPage from './components/MoviesPage';
-import MovieDetailsPage from './components/MovieDetailsPage';
+// import HomePage from './components/HomePage';
+// import MoviesPage from './components/MoviesPage';
+// import MovieDetailsPage from './components/MovieDetailsPage';
+
+const HomePage = lazy(() => import('./components/HomePage'));
+const MoviesPage = lazy(() => import('./components/MoviesPage'));
+const MovieDetailsPage = lazy(() => import('./components/MovieDetailsPage'));
 
 class App extends Component {
   render() {
