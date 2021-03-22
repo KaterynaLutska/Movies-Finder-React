@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
-  background-image: url('../src/images/bg-pattern.png');
+  background-size: cover;
+  background-image: url('../src/images/film-2233658_1280.jpeg');
 }
 img {
   display: block;

@@ -1,0 +1,31 @@
+.MovieDetailsPageWrap {
+  margin-bottom: 60px;
+}
+.MovieDetailsPage {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+  display: flex;
+  max-width: 800px;
+  border-radius: 14px;
+}
+
+.MovieDetailsPageInfo {
+  color: black;
+  padding: 40px;
+  background-color: rgba(250, 234, 215, 0.5);
+}
+
+.Genre {
+  display: flex;
+}
+.Genre > li {
+  margin-right: 5px;
+}
+
+.NavLink {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 40px;
+}
