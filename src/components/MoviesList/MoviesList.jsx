@@ -1,11 +1,11 @@
 import s from './MoviesList.module.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import routes from '../../routes';
 import MoviePreview from '../MoviePreview';
 
 const MoviesList = ({ movies }) => {
-  console.log(movies, 'movies');
-  console.log(routes.movies);
   return (
     <ul className={s.MoviesList}>
       {movies.map(el => (
@@ -25,3 +25,15 @@ const MoviesList = ({ movies }) => {
 };
 
 export default MoviesList;
+
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      vote: PropTypes.number,
+      imgUrl: PropTypes.string,
+    }),
+  ),
+  onClickModal: PropTypes.func,
+};

@@ -1,11 +1,12 @@
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import s from './Navigation.module.css';
+
 import routes from '../../routes';
 import BtnBack from '../BtnBack';
-import s from './Navigation.module.css';
 
 const Navigation = () => {
   return (
-    <nav classNamme={(s.nav, s.navPills)}>
+    <nav className={(s.nav, s.navPills)}>
       <NavLink
         exact
         to={routes.home}

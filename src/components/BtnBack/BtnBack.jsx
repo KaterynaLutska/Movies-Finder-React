@@ -7,7 +7,7 @@ const BtnBack = () => {
 
   return (
     <button className={s.Btn} type="button" onClick={goBack}>
-      <span class="material-icons">fast_rewind</span>
+      <span className="material-icons">fast_rewind</span>
     </button>
   );
 };
