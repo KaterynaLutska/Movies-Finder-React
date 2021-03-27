@@ -7,21 +7,21 @@ import { Route, Switch } from 'react-router-dom';
 import Container from './components/Container';
 import AppBar from './components/AppBar';
 
-const HomePageViews = lazy(() =>
-  import('./views/HomePageViews' /* webpackChunkNamme: "HomePage" */),
+const HomePage = lazy(() =>
+  import('./views/HomePage' /* webpackChunkNamme: "HomePage" */),
 );
-const MoviesPageViews = lazy(() =>
-  import('./views/MoviesPageViews' /* webpackChunkNamme: "MoviesPage" */),
+const MoviesPage = lazy(() =>
+  import('./views/MoviesPage' /* webpackChunkNamme: "MoviesPage" */),
 );
-const MovieDetailsPageViews = lazy(() =>
+const MovieDetailsPage = lazy(() =>
   import(
-    './views/MovieDetailsPageViews' /* webpackChunkNamme: "MoviesDetailPage" */
+    './views/MovieDetailsPage' /* webpackChunkNamme: "MoviesDetailPage" */
   ),
 );
 
 class App extends Component {
   render() {
-    console.log(this.props, 'HomePage');
+    //console.log(this.props, 'HomePage');
 
     return (
       <div className={s.App}>
@@ -30,13 +30,14 @@ class App extends Component {
           <Suspense fallback={<h1>Loading...</h1>}>
             <Switch>
               {/* головна стрінка  */}
-              <Route exact path={routes.home} component={HomePageViews} />
+              <Route exact path={routes.home} component={HomePage} />
               {/* сторінка пошуку  */}
-              <Route exact path={routes.movies} component={MoviesPageViews} />
+              <Route exact path={routes.movies} component={MoviesPage} />
               {/* сторінка окремого фільму  movieId - це патерн або шаблон  */}
               <Route
+                exact
                 path={routes.movieDetails}
-                component={MovieDetailsPageViews}
+                component={MovieDetailsPage}
               />
               {/* <Route component={HomePage} /> */}
             </Switch>

@@ -1,6 +1,7 @@
 .NavLink {
   color: black;
   font-size: 20px;
+  font-weight: 500;
 }
 
 .NavLink:not(:last-child) {
@@ -9,4 +10,14 @@
 
 a:link {
   text-decoration: none;
+}
+.NavLinkActive {
+  color: green;
+}
+
+.Genre {
+  display: flex;
+}
+.Genre > li {
+  margin-right: 5px;
 }

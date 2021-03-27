@@ -11,16 +11,15 @@ const Navigation = () => {
         exact
         to={routes.home}
         className={s.NavLink}
-        activeClassName="NavLink-active"
+        activeClassName={s.NavLinkActive}
       >
         Home
       </NavLink>
-
       <NavLink
         exact
         to={routes.movies}
         className={s.NavLink}
-        activeClassName="NavLink-active"
+        activeClassName={s.NavLinkActive}
       >
         Movies
       </NavLink>

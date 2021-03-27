@@ -2,15 +2,21 @@ import s from './MoviesList.module.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import routes from '../../routes';
 import MoviePreview from '../MoviePreview';
 
-const MoviesList = ({ movies }) => {
+const MoviesList = ({ movies, location }) => {
+  console.log(location, 'movielist location');
+
   return (
     <ul className={s.MoviesList}>
       {movies.map(el => (
         <li key={el.id}>
-          <Link to={`${routes.movies}/${el.id}`}>
+          <Link
+            to={{
+              pathname: `movies/${el.id}`,
+              state: { from: location },
+            }}
+          >
             <MoviePreview
               id={el.id}
               title={el.title}

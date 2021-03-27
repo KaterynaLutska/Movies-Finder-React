@@ -1,7 +1,8 @@
 body {
   font-family: sans-serif;
   background-size: cover;
-  background-image: url('../src/images/film-2233658_1280.jpeg');
+  background-color: indianred;
+  /* //background-image: url('../src/images/bg-pattern.png'); */
 }
 img {
   display: block;

@@ -2,12 +2,11 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import s from './MoviePreview.module.css';
-let key = '68bc44794965f90c41d1f35ad9bb144b';
 
 class MoviePreview extends Component {
   render() {
     const { title, imgUrl } = this.props;
-    const imgSrc = `https://image.tmdb.org/t/p/w500/${imgUrl}?api_key=${key}`;
+    const imgSrc = `https://image.tmdb.org/t/p/w500/${imgUrl}`;
 
     return (
       <div className={s.MoviePreviewThumb}>
