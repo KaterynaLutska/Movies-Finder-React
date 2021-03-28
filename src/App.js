@@ -8,21 +8,17 @@ import Container from './components/Container';
 import AppBar from './components/AppBar';
 
 const HomePage = lazy(() =>
-  import('./views/HomePage' /* webpackChunkNamme: "HomePage" */),
+  import('./views/HomePage' /* webpackChunkName: "HomePage" */),
 );
 const MoviesPage = lazy(() =>
-  import('./views/MoviesPage' /* webpackChunkNamme: "MoviesPage" */),
+  import('./views/MoviesPage' /* webpackChunkName: "MoviesPage" */),
 );
 const MovieDetailsPage = lazy(() =>
-  import(
-    './views/MovieDetailsPage' /* webpackChunkNamme: "MoviesDetailPage" */
-  ),
+  import('./views/MovieDetailsPage' /* webpackChunkName: "MoviesDetailPage" */),
 );
 
 class App extends Component {
   render() {
-    //console.log(this.props, 'HomePage');
-
     return (
       <div className={s.App}>
         <AppBar />
@@ -34,11 +30,7 @@ class App extends Component {
               {/* сторінка пошуку  */}
               <Route exact path={routes.movies} component={MoviesPage} />
               {/* сторінка окремого фільму  movieId - це патерн або шаблон  */}
-              <Route
-                exact
-                path={routes.movieDetails}
-                component={MovieDetailsPage}
-              />
+              <Route path={routes.movieDetails} component={MovieDetailsPage} />
               {/* <Route component={HomePage} /> */}
             </Switch>
           </Suspense>

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import s from './MoviePreview.module.css';
+import defaultImg from '../../images/default-img.jpeg';
 
 class MoviePreview extends Component {
   render() {
@@ -25,11 +26,11 @@ class MoviePreview extends Component {
 export default MoviePreview;
 
 MoviePreview.defaultProps = {
-  imgSrc:
-    'https://static.ukrinform.com/photos/2018_12/thumb_files/630_360_1546000648-830.jpg',
+  imgSrc: defaultImg,
 };
 
 MoviePreview.propTypes = {
   title: PropTypes.string,
   imgUrl: PropTypes.string,
+  imgSrc: PropTypes.string,
 };

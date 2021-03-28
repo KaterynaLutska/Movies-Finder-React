@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import MoviePreview from '../MoviePreview';
 
 const MoviesList = ({ movies, location }) => {
-  console.log(location, 'movielist location');
-
   return (
     <ul className={s.MoviesList}>
       {movies.map(el => (
@@ -17,12 +15,7 @@ const MoviesList = ({ movies, location }) => {
               state: { from: location },
             }}
           >
-            <MoviePreview
-              id={el.id}
-              title={el.title}
-              vote={el.vote_average}
-              imgUrl={el.poster_path}
-            />
+            <MoviePreview title={el.title} imgUrl={el.poster_path} />
           </Link>
         </li>
       ))}
@@ -33,13 +26,5 @@ const MoviesList = ({ movies, location }) => {
 export default MoviesList;
 
 MoviesList.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      vote: PropTypes.number,
-      imgUrl: PropTypes.string,
-    }),
-  ),
-  onClickModal: PropTypes.func,
+  movies: PropTypes.array,
 };

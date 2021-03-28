@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import api from '../../api/api.js';
-import PropTypes from 'prop-types';
 
 import MoviesList from '../../components/MoviesList';
 
@@ -19,7 +18,7 @@ class HomePage extends Component {
     const { movies } = this.state;
     return (
       <div>
-        <h2>Today such films are popular</h2>
+        <h2>Today such films are popular: </h2>
         <MoviesList movies={movies} />
       </div>
     );
@@ -27,7 +26,3 @@ class HomePage extends Component {
 }
 
 export default HomePage;
-
-HomePage.propTypes = {
-  movies: PropTypes.array,
-};

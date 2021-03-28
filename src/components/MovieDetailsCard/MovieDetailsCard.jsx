@@ -55,5 +55,15 @@ MovieDetailsCard.defaultProps = {
 };
 
 MovieDetailsCard.propTypes = {
-  movies: PropTypes.array,
+  movies: PropTypes.arrayOf({
+    title: PropTypes.string,
+    genres: PropTypes.arrayOf({
+      id: PropTypes.number,
+      name: PropTypes.string,
+    }),
+    overview: PropTypes.string,
+    poster_path: PropTypes.string,
+    release_date: PropTypes.number,
+    vote_average: PropTypes.number,
+  }),
 };

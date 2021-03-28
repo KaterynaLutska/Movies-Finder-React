@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import api from '../../api/api';
+import queryString from 'query-string';
 
 import MoviesList from '../../components/MoviesList';
 import SearchForm from '../../components/SearchForm';
@@ -12,7 +13,10 @@ class MoviePage extends Component {
   };
 
   componentDidMount() {
-    //console.log(this.props.location.pathname, 'pathname');
+    const { pathname, search } = this.props.location;
+    if (pathname && search) {
+      this.setState({ query: queryString.parse(search).query });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -23,16 +27,6 @@ class MoviePage extends Component {
       this.fetchMovie(currentQuery);
     }
   }
-
-  onChangeQuery = data => {
-    this.setState({
-      query: data.toLowerCase(),
-    });
-    this.props.history.push({
-      pathname: this.props.location.pathname,
-      search: `query=${data}`,
-    });
-  };
 
   fetchMovie = () => {
     const { query } = this.state;
@@ -47,12 +41,25 @@ class MoviePage extends Component {
       });
   };
 
+  onChangeQuery = data => {
+    const { history, location } = this.props;
+
+    this.setState({
+      query: data.toLowerCase(),
+    });
+    history.push({
+      pathname: location.pathname,
+      search: `query=${data}`,
+    });
+  };
+
   render() {
+    const { location } = this.props;
     const { movies } = this.state;
     return (
       <div>
         <SearchForm onSubmit={this.onChangeQuery} />
-        <MoviesList movies={movies} />
+        <MoviesList movies={movies} location={location} />
       </div>
     );
   }

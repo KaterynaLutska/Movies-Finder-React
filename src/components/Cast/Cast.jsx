@@ -1,11 +1,14 @@
 import s from './Cast.module.css';
 import PropTypes from 'prop-types';
+import defaultImg from '../../images/no-image.jpeg';
 
-const Cast = ({ cast, imgSrc }) => {
+const Cast = ({ cast, defaultImg }) => {
   return (
     <div>
       {cast.length === 0 ? (
-        <h3 className={s.CastTitle}>We don`t have information about cast.</h3>
+        <h3 className={s.CastTitle}>
+          We don`t have any information about cast.
+        </h3>
       ) : (
         <ul className={s.Cast}>
           {cast.slice(0, 6).map(el => (
@@ -15,7 +18,7 @@ const Cast = ({ cast, imgSrc }) => {
                 src={
                   el.profile_path !== null
                     ? `https://image.tmdb.org/t/p/w500/${el.profile_path}`
-                    : imgSrc
+                    : defaultImg
                 }
                 width="100px"
                 alt={el.name}
@@ -31,10 +34,10 @@ const Cast = ({ cast, imgSrc }) => {
 export default Cast;
 
 Cast.defaultProps = {
-  imgSrc:
-    'https://static.ukrinform.com/photos/2018_12/thumb_files/630_360_1546000648-830.jpg',
+  defaultImg: defaultImg,
 };
 
 Cast.propTypes = {
   cast: PropTypes.array,
+  defaultImg: PropTypes.string,
 };

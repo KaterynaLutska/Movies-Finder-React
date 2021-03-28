@@ -23,5 +23,7 @@ const Reviews = ({ reviews }) => {
 export default Reviews;
 
 Reviews.propTypes = {
-  movieId: PropTypes.number,
+  reviews: PropTypes.array,
+  author: PropTypes.string,
+  content: PropTypes.string,
 };

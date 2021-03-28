@@ -1,19 +1,19 @@
 import { Component, Suspense, lazy } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
-// import s from './MovieDetailsPage.module.css';
 import PropTypes from 'prop-types';
-
 import api from '../../api/api';
+
 import MovieDetailsCard from '../../components/MovieDetailsCard';
 import NavigationDeteils from '../../components/Navigation/NavigationDetails';
+import BtnBack from '../../components/BtnBack/BtnBack';
 
 const Cast = lazy(() =>
-  import('../../components/Cast' /* webpackChunkNamme: "Cast" */),
+  import('../../components/Cast' /* webpackChunkName: "Cast" */),
 );
 
 const Reviews = lazy(() =>
-  import('../../components/Reviews' /* webpackChunkNamme: "Cast" */),
+  import('../../components/Reviews' /* webpackChunkName: "Reviews" */),
 );
 
 class MovieDetailsPage extends Component {
@@ -41,31 +41,36 @@ class MovieDetailsPage extends Component {
       return reviews;
     });
   }
+  handleGoBack = () => {
+    const { location, history } = this.props;
+
+    if (location.state && location.state.from) {
+      return history.push(location.state.from);
+    }
+
+    history.push('/');
+  };
 
   render() {
-    const { movie } = this.state;
+    const { movie, cast, reviews } = this.state;
+    const { url, path } = this.props.match;
     return (
       <div>
+        <BtnBack onClick={this.handleGoBack} />
         <MovieDetailsCard movie={movie} />
         <div>
           <h2> More info...</h2>
-          <NavigationDeteils
-            url={this.props.match.url}
-            location={this.props.location}
-          />
+          <NavigationDeteils url={url} location={this.props.location} />
           <Suspense fallback={<h1>Loading...</h1>}>
-            {/* <Switch> */}
             <Route
-              path={`${this.props.match.path}`}
-              render={props => <Cast {...props} cast={this.state.cast} />}
+              path={`${path}/cast`}
+              render={props => <Cast {...props} cast={cast} />}
             />
+
             <Route
-              path={`${this.props.match.path}/reviews`}
-              render={props => (
-                <Reviews {...props} reviews={this.state.reviews} />
-              )}
+              path={`${path}/reviews`}
+              render={props => <Reviews {...props} reviews={reviews} />}
             />
-            {/* </Switch> */}
           </Suspense>
         </div>
       </div>

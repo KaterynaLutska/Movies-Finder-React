@@ -1,6 +1,5 @@
 import s from './Navigation.module.css';
 import { NavLink } from 'react-router-dom';
-import routes from '../../routes';
 
 const NavigationDeteils = ({ url, location }) => {
   //console.log(props, 'url');
