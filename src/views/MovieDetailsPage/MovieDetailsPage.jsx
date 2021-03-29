@@ -21,26 +21,43 @@ class MovieDetailsPage extends Component {
     movie: [],
     cast: [],
     reviews: [],
+    error: null,
   };
 
   async componentDidMount() {
     const { movieId } = this.props.match.params;
 
-    api.getMovieDetailPage(movieId).then(res => {
-      this.setState({ movie: res.data });
-      return res.data;
-    });
+    api
+      .getMovieDetailPage(movieId)
+      .then(res => {
+        this.setState({ movie: res.data });
+        return res.data;
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
 
-    api.getCast(movieId).then(cast => {
-      this.setState({ cast });
-      return cast;
-    });
+    api
+      .getCast(movieId)
+      .then(cast => {
+        this.setState({ cast });
+        return cast;
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
 
-    api.getReviews(movieId).then(reviews => {
-      this.setState({ reviews });
-      return reviews;
-    });
+    api
+      .getReviews(movieId)
+      .then(reviews => {
+        this.setState({ reviews });
+        return reviews;
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
   }
+
   handleGoBack = () => {
     const { location, history } = this.props;
 
@@ -54,6 +71,7 @@ class MovieDetailsPage extends Component {
   render() {
     const { movie, cast, reviews } = this.state;
     const { url, path } = this.props.match;
+
     return (
       <div>
         <BtnBack onClick={this.handleGoBack} />

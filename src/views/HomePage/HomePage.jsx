@@ -6,12 +6,18 @@ import MoviesList from '../../components/MoviesList';
 class HomePage extends Component {
   state = {
     movies: [],
+    error: null,
   };
 
   componentDidMount() {
-    api.getPopularMovie().then(movies => {
-      this.setState({ movies });
-    });
+    api
+      .getPopularMovie()
+      .then(movies => {
+        this.setState({ movies });
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
   }
 
   render() {
